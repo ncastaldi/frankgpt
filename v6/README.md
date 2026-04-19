@@ -386,7 +386,7 @@ v6/
     └── example.ToT-Prompting.md
 ```
 
-**Total**: 22 files, ~6,200 lines, fully modular
+**Total**: 23 files, ~5,600 lines, fully modular
 
 ---
 
@@ -463,11 +463,10 @@ Want to contribute a specialty or improve existing modules?
 
 **Changes**:
 - ✅ Created 3-layer system (Core → Skills → Specialties)
-- ✅ Extracted 5 domain specialties from v5 monolith
-- ✅ Added specialty.TEMPLATE for custom domains
+- ✅ Created 6 specialties (itil, devops, prompt-engineering, data-analysis, sccm, TEMPLATE)
 - ✅ Zero environment coupling achieved
 - ✅ Multi-specialty composition support
-- ✅ Full documentation (ARCHITECTURE.md, README.md)
+- ✅ Full documentation (ARCHITECTURE.md, README.md, LEGACY.md)
 
 **Migration**: v4/v5 → v6 (see Migration section above)
 
