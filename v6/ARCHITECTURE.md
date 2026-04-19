@@ -98,12 +98,12 @@ v6/
 │   └── style.tot.instructions.md
 │
 ├── specialties/                     # Domain experts (LOAD as needed)
-│   ├── specialty.devops.instructions.md        [Phase 3]
-│   ├── specialty.prompt-engineering.instructions.md  [Phase 3]
-│   ├── specialty.data-analysis.instructions.md [Phase 3]
-│   ├── specialty.sccm.instructions.md          [Phase 3]
+│   ├── specialty.devops.instructions.md        ✅
+│   ├── specialty.prompt-engineering.instructions.md  ✅
+│   ├── specialty.data-analysis.instructions.md ✅
+│   ├── specialty.sccm.instructions.md          ✅
 │   ├── specialty.itil.instructions.md          ✅
-│   └── specialty.TEMPLATE.instructions.md      [Phase 3]
+│   └── specialty.TEMPLATE.instructions.md      ✅
 │
 └── knowledge/                       # Examples & references
     ├── example.CoT-Prompting.md
@@ -116,7 +116,6 @@ v6/
 
 **Legend**:
 - `✅` - Available now
-- `[Phase 3]` - Planned, not yet implemented
 
 ## The Three Layers Explained
 
@@ -192,45 +191,45 @@ Each specialty adds:
 
 **Use when**: Managing IT incidents, performing root cause analysis, creating IT documentation
 
-#### [Phase 3] specialty.devops.instructions.md
+#### specialty.devops.instructions.md ✅
 **Domain**: DevOps, Docker, Compose, Ansible, IaC
 
-**Will add**:
+**Provides**:
 - Personas: DevOps SRE (Docker & Compose), DevOps SRE (Ansible & IaC)
-- Commands: `/docker`, `/ansible`
-- Workflows: Container troubleshooting, Compose debugging, Ansible automation
+- Commands: `/docker`, `/ansible`, `/compose`, `/traefik`
+- Workflows: Container troubleshooting, Compose debugging, Ansible automation, safe deployment strategies
 
-**Use when**: Working with Docker, Kubernetes, Ansible, infrastructure automation
+**Use when**: Working with Docker, Compose, Swarm, Traefik, Ansible, infrastructure automation
 
-#### [Phase 3] specialty.prompt-engineering.instructions.md
+#### specialty.prompt-engineering.instructions.md ✅
 **Domain**: Advanced Prompt Optimization & Engineering
 
-**Will add**:
+**Provides**:
 - Personas: Senior Prompt Engineer
-- Commands: `/optimize`
-- Workflows: Prompt analysis, refactoring, advanced technique application
+- Commands: `/optimize`, `/craft`, `/reason`, `/evaluate`, `/patterns`
+- Workflows: Prompt creation (C.R.A.F.T.), optimization, reasoning integration (CoT/ToT/RAG), evaluation rubric
 
-**Use when**: Creating complex prompts, optimizing LLM interactions
+**Use when**: Creating production prompts, optimizing LLM interactions, integrating advanced reasoning
 
-#### [Phase 3] specialty.data-analysis.instructions.md
+#### specialty.data-analysis.instructions.md ✅
 **Domain**: Data Analysis, SQL, Python, Statistics
 
-**Will add**:
-- Personas: Data Analyst
-- Commands: `/analyze`
-- Workflows: Structured Chain-of-Thought (SCoT) for data problems
+**Provides**:
+- Personas: DataAnalystX (SQL, Python, statistical modeling expert)
+- Commands: `/analyze`, `/query`, `/visualize`, `/model`, `/clean`
+- Workflows: Structured Chain-of-Thought (SCoT) 6-phase methodology, visualization guide, statistical analysis
 
-**Use when**: Analyzing datasets, writing SQL, creating visualizations
+**Use when**: Analyzing datasets, writing SQL queries, creating visualizations, statistical modeling
 
-#### [Phase 3] specialty.sccm.instructions.md
+#### specialty.sccm.instructions.md ✅
 **Domain**: SCCM, Intune, Endpoint Management
 
-**Will add**:
+**Provides**:
 - Personas: Senior Infrastructure Engineer, Microsoft MVP
-- Commands: `/endpoint`
-- Workflows: Co-management, modern endpoint management, security
+- Commands: `/sccm`, `/intune`, `/comanage`, `/package`, `/troubleshoot`
+- Workflows: Win32 app deployment, Co-management configuration, compliance policies, architectural guidance
 
-**Use when**: Managing Windows endpoints, SCCM/Intune deployments
+**Use when**: Managing Windows endpoints, SCCM/Intune deployments, Co-management, application packaging
 
 ### Layer 4: Knowledge (Shared Examples)
 
@@ -298,7 +297,7 @@ v6/specialties/specialty.itil.instructions.md
 
 **Best for**: IT support, troubleshooting, IT documentation
 
-### Pattern 4: DevOps Engineer [Phase 3]
+### Pattern 4: DevOps Engineer ✅
 
 **Load**:
 ```
@@ -309,10 +308,10 @@ v6/specialties/specialty.devops.instructions.md
 
 **Capabilities**:
 - All core commands
-- DevOps commands: `/docker`, `/ansible`
+- DevOps commands: `/docker`, `/ansible`, `/compose`, `/traefik`
 - Container and IaC troubleshooting
 
-**Best for**: Docker, Compose, Ansible, infrastructure work
+**Best for**: Docker, Compose, Swarm, Traefik, Ansible, infrastructure work
 
 ### Pattern 5: Multi-Specialty Expert
 
@@ -339,7 +338,7 @@ v6/specialties/specialty.itil.instructions.md
 
 ## Creating Custom Specialties
 
-### Step 1: Copy the Template [Phase 3]
+### Step 1: Copy the Template ✅
 
 ```bash
 cp v6/specialties/specialty.TEMPLATE.instructions.md v6/specialties/specialty.myDomain.instructions.md
@@ -467,7 +466,7 @@ The `v6/copilot-instructions.md` file contains pre-configured loading patterns. 
    |------------|---------------|
    | Load consolidated file | Load Frank.core + craft + specialties |
    | `//ticket` command | Load specialty.itil → `/ticket` |
-   | `//docker` pseudo-command | Load specialty.devops → `/docker` [Phase 3] |
+   | `//docker` command | Load specialty.devops → `/docker` ✅ |
    | ITIL modes | Load specialty.itil |
    | Meta-prompting | Load skills/style.craft |
 
@@ -483,14 +482,15 @@ The `v6/copilot-instructions.md` file contains pre-configured loading patterns. 
 | File/Folder | Recommendation |
 |-------------|----------------|
 | `agents/FrankGPT.consolidated-instructions.md` | Archive with note "Superseded by v6" |
-| `agents/Data Analyst.agent.md` | Keep for reference (becomes specialty.data-analysis in Phase 3) |
-| `agents/SCCM Tutor.agent.md` | Keep for reference (becomes specialty.sccm in Phase 3) |
+| `agents/Data Analyst.agent.md` | Keep for reference (see v6/specialties/specialty.data-analysis.instructions.md) |
+| `agents/SCCM Tutor.agent.md` | Keep for reference (see v6/specialties/specialty.sccm.instructions.md) |
 | `_Frank_/markdown/*.md` | Source files - can archive after v6 verified |
 | `_Frank_/docx/` | Archive or delete (export artifacts) |
 | `instructions/core.instructions.md` | Archive with note "v4 file, replaced by v6" |
 | `instructions/style.markdown.instructions.md` | Delete (duplicate, now in v6/skills/) |
 | `knowledge/*.md` | ✅ Copied to v6/knowledge/ - can keep originals as backup |
 | `prompts/*.md` | ✅ Keep at repo root (templates, not Frank core files) |
+| See LEGACY.md | Complete migration and cleanup guide |
 
 ## Troubleshooting
 
@@ -500,8 +500,8 @@ The `v6/copilot-instructions.md` file contains pre-configured loading patterns. 
 
 **Solution**:
 1. Check which files are loaded in your VS Code configuration
-2. Verify the specialty providing that command is included
-3. Some commands are in Phase 3 (not yet implemented)
+2. Verify the specialty providing that command is included (e.g., specialty.devops.instructions.md for `/docker`)
+3. Confirm you're loading both Frank.core AND the specialty
 
 ### "Cross-references are broken"
 
@@ -541,8 +541,8 @@ The `v6/copilot-instructions.md` file contains pre-configured loading patterns. 
 - ✅ Frank.core with 7 universal personas
 - ✅ 7 skill modules (CRAFT, CoT, ToT, RAG, Markdown, Mermaid, Advanced Reasoning)
 - ✅ specialty.itil for IT Service Management
-- 🚧 Phase 3: Additional specialties (devops, prompt-engineering, data-analysis, sccm)
-- 🚧 Phase 5: README.md and legacy cleanup
+- ✅ Phase 3 complete: 5 additional specialties (devops, prompt-engineering, data-analysis, sccm, TEMPLATE)
+- ✅ Phase 5 complete: README.md, LEGACY.md, and documentation finalization
 
 ### v5.0 (Pre-modular)
 - Single consolidated file (FrankGPT.consolidated-instructions.md)
@@ -555,17 +555,11 @@ The `v6/copilot-instructions.md` file contains pre-configured loading patterns. 
 
 ## Roadmap
 
-### Phase 3 (Next)
-- [ ] Create specialty.devops.instructions.md
-- [ ] Create specialty.prompt-engineering.instructions.md
-- [ ] Create specialty.data-analysis.instructions.md
-- [ ] Create specialty.sccm.instructions.md
-- [ ] Create specialty.TEMPLATE.instructions.md
-
-### Phase 5 (Documentation)
-- [ ] Create v6/README.md (quick start guide)
-- [ ] Archive legacy v4/v5 files
-- [ ] Evaluate prompts/ folder handling
+### Completed ✅
+- ✅ Phase 1-2: Core architecture, skills, ITIL specialty
+- ✅ Phase 3: Five domain specialties (devops, prompt-engineering, data-analysis, sccm, TEMPLATE)
+- ✅ Phase 4: Documentation (ARCHITECTURE.md, copilot-instructions.md)
+- ✅ Phase 5: README.md, LEGACY.md, documentation finalization
 
 ### Future Enhancements
 - [ ] Build script for creating consolidated version (optional)
@@ -589,12 +583,12 @@ Skills are reasoning techniques or methodologies. To add one:
 
 Specialties are domain expertise modules. To add one:
 
-1. Copy specialty.TEMPLATE.instructions.md [Phase 3]
+1. Copy specialty.TEMPLATE.instructions.md ✅
 2. Fill in all required sections
 3. Test independently with Frank.core
 4. Document triggering keywords and command syntax
 5. Update copilot-instructions.md with loading example
-6. Update this ARCHITECTURE.md
+6. Update this ARCHITECTURE.md or create your own documentation
 
 ### Updating Knowledge Examples
 
@@ -608,10 +602,10 @@ Knowledge files are referenced by skills and specialties:
 ## Support
 
 - **Architecture Questions**: Review this document
+- **Quick Start**: See v6/README.md for usage examples
 - **Usage Examples**: See copilot-instructions.md
-- **Custom Specialties**: Use specialty.TEMPLATE.instructions.md [Phase 3]
-- **Bug Reports**: Check existing issues or create new one
-- **Feature Requests**: Propose in issues with use case
+- **Custom Specialties**: Use specialty.TEMPLATE.instructions.md ✅
+- **Legacy Migration**: See LEGACY.md for v4/v5 migration guide
 
 ---
 
