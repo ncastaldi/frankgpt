@@ -144,7 +144,7 @@ Now help me troubleshoot this Docker Compose issue...
 
 Copy the content you need directly into your LLM chat of choice.
 
-**See**: [copilot-instructions.md](copilot-instructions.md) for pre-configured patterns
+**See**: [copilot-instructions.md](./v6/copilot-instructions.md) for pre-configured patterns
 
 ---
 
