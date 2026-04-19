@@ -1,4 +1,4 @@
-# Frank v6 - Modular AI Assistant Framework
+# Frank Meadows v6 - Modular AI Assistant Framework
 
 **Version**: 6.0  
 **Architecture**: Skills-Centric Modular System  
@@ -78,44 +78,6 @@ Load:
 ```
 
 **You get**: DevOps + Data Science hybrid with advanced reasoning
-
----
-
-## 📁 Architecture Overview
-
-Frank v6 uses a **3-layer modular architecture**:
-
-```
-Layer 1: CORE (required)
-└── Frank.core.agent.md - Universal personality and base capabilities
-
-Layer 2: SKILLS (optional, technique-focused)
-├── style.craft.instructions.md - C.R.A.F.T. framework for prompts
-├── style.cot.instructions.md - Chain-of-Thought reasoning
-├── style.tot.instructions.md - Tree-of-Thought reasoning
-├── style.rag.instructions.md - Retrieval-Augmented Generation
-├── style.advanced-reasoning.instructions.md - Overview of all techniques
-├── style.markdown.instructions.md - Markdown formatting standards
-└── style.mermaid.instructions.md - Diagram creation
-
-Layer 3: SPECIALTIES (optional, domain-focused)
-├── specialty.devops.instructions.md - Docker, Ansible, IaC automation
-├── specialty.prompt-engineering.instructions.md - LLM optimization
-├── specialty.data-analysis.instructions.md - SQL, Python, statistics
-├── specialty.sccm.instructions.md - Endpoint management (SCCM/Intune)
-├── specialty.itil.instructions.md - IT service management
-└── specialty.TEMPLATE.instructions.md - Create your own specialty
-
-Layer 4: KNOWLEDGE (reference materials)
-├── example.CoT-Prompting.md - Chain-of-Thought examples
-├── example.ToT-Prompting.md - Tree-of-Thought examples
-├── example.RAG-Token.md - RAG examples
-├── example.ReAct.md - ReAct protocol examples
-├── example.ITILv4.instructions.md - ITIL framework reference
-└── example.Meta-Prompting.md - Meta-prompting examples
-```
-
-**Key Principle**: Load only what you need. Core works alone, skills enhance reasoning, specialties add domain expertise.
 
 ---
 
@@ -280,55 +242,6 @@ Want to add your own domain expertise? Use the template:
 
 ---
 
-## 📚 Documentation
-
-- **[ARCHITECTURE.md](ARCHITECTURE.md)**: Comprehensive architecture guide (500+ lines)
-  - Design principles
-  - File organization
-  - Loading patterns
-  - Multi-specialty composition
-  - Migration from v4/v5
-  - Troubleshooting
-  - Version history
-
-- **[copilot-instructions.md](copilot-instructions.md)**: VS Code integration guide
-  - Pre-configured loading patterns
-  - Quick start templates
-  - Multi-specialty examples
-
-- **Individual files**: Each skill and specialty has inline documentation
-
----
-
-## 🔄 Migration from Earlier Versions
-
-### From v5 (FrankGPT.consolidated-instructions.md)
-
-**v5 approach**: Single monolithic file with all capabilities  
-**v6 approach**: Modular - load only what you need
-
-**Migration path**:
-1. **Core functionality**: Use `Frank.core.agent.md` (replaces universal personas)
-2. **IT operations**: Use `specialty.itil.instructions.md` (replaces ITIL/incident workflows)
-3. **DevOps**: Use `specialty.devops.instructions.md` (replaces Docker/Ansible sections)
-4. **Prompting**: Use `specialty.prompt-engineering.instructions.md` (replaces prompt optimization)
-
-**Benefit**: Smaller context window, faster loading, compose only what you need
-
-### From v4 (Multiple agents/ files)
-
-**v4 approach**: Separate agent files (Data Analyst, SCCM Tutor, etc.)  
-**v6 approach**: Specialties that compose with shared core
-
-**Migration path**:
-- `agents/Data Analyst.agent.md` → `specialty.data-analysis.instructions.md`
-- `agents/SCCM Tutor.agent.md` → `specialty.sccm.instructions.md`
-- Custom agents → Create using `specialty.TEMPLATE.instructions.md`
-
-**Benefit**: Shared core personality, multi-specialty composition, portable structure
-
----
-
 ## 🏗️ Design Principles
 
 ### 1. Portability First
@@ -435,24 +348,6 @@ Load: Frank.core.agent.md
 - [ ] Dynamic specialty loading based on conversation context
 - [ ] Auto-detection of required skills
 - [ ] Specialty versioning and compatibility matrix
-
----
-
-## 🤝 Contributing
-
-Want to contribute a specialty or improve existing modules?
-
-1. **For new specialties**: Use `specialty.TEMPLATE.instructions.md` as your starting point
-2. **For improvements**: Ensure changes maintain v6 compatibility
-3. **For bug fixes**: Update version metadata if behavior changes
-4. **Share**: Custom specialties can be shared as standalone files
-
-**Principles**:
-- Maintain portability (no environment coupling)
-- Use relative paths
-- Document in frontmatter
-- Include examples in workflows
-- Test with Frank.core independently
 
 ---
 
