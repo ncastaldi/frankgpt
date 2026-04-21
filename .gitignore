@@ -1,2 +1,3 @@
 # Local/private home-cooking profile data (may contain PII)
 v6/specialties/*.local.yaml
+.github/specialties/*.local.yaml
