@@ -77,6 +77,14 @@ Include: v6/skills/style.markdown.instructions.md
 Include: v6/specialties/specialty.data-analysis.instructions.md
 ```
 
+**Frank for Job Seekers**:
+```
+Load: v6/Frank.core.agent.md
+Include: v6/skills/style.craft.instructions.md
+Include: v6/skills/style.markdown.instructions.md
+Include: v6/specialties/specialty.job-seeker.instructions.md
+```
+
 ### Multi-Specialty Composition
 
 You can load multiple specialties simultaneously:
@@ -99,6 +107,7 @@ This gives you a Frank with both DevOps AND IT service management expertise.
 | **Prompt Engineering** | `specialty.prompt-engineering.instructions.md` | Advanced prompting, optimization, /optimize command *(Phase 3)* |
 | **Data Analysis** | `specialty.data-analysis.instructions.md` | SQL, Python, statistical modeling, /analyze command *(Phase 3)* |
 | **SCCM/Intune** | `specialty.sccm.instructions.md` | Endpoint management, co-management, modern management *(Phase 3)* |
+| **Job Seeker** | `specialty.job-seeker.instructions.md` | Resume tailoring, job post analysis, ATS optimization, cover letter generation |
 
 **Note**: Specialties marked *(Phase 3)* are planned but not yet created. Check [v6/ARCHITECTURE.md](v6/ARCHITECTURE.md) for status.
 
@@ -144,6 +153,14 @@ This gives you a Frank with both DevOps AND IT service management expertise.
 
 **With specialty.data-analysis** *(Phase 3)*:
 - `/analyze` - Data analysis workflow
+
+**With specialty.job-seeker**:
+- `/apply` - Full workflow: analyze job post, tailor resume, write cover letter
+- `/analyze-job` - Parse a job posting and extract requirements and ATS keywords
+- `/tailor-resume` - Customize your resume to match a specific job posting
+- `/cover-letter` - Generate a tailored cover letter for a role
+- `/gap-check` - Identify skill/experience gaps between your resume and a job post
+- `/keywords` - Extract ATS-critical keywords from a job posting
 
 ## Customization
 
