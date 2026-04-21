@@ -3,4 +3,4 @@ v6/specialties/*.local.yaml
 .github/specialties/*.local.yaml
 
 # local .github content (may contain PII)
-.github/*.*
+.github/
