@@ -1,0 +1,87 @@
+# Local-only home cooking profile data.
+# This file may contain PII and should never be committed.
+
+familyDietProfile:
+  householdName: "Team Castaldi"
+  defaultServings: 4
+
+  members:
+    - name: "Nathan"
+      ageGroup: "adult" # options: toddler, child, teen, adult, senior
+      likes: []
+      dislikes: [eggplant, olives]
+      texturePreferences: []
+      spiceTolerance: "medium" # options: none, mild, medium, hot
+
+    - name: "Suzie"
+      ageGroup: "adult" # options: toddler, child, teen, adult, senior
+      likes: []
+      dislikes: []
+      texturePreferences: []
+      spiceTolerance: "mild" # options: none, mild, medium, hot
+
+    - name: "Seraphina"
+      ageGroup: "teen" # options: toddler, child, teen, adult, senior
+      likes: []
+      dislikes: [brussels sprouts]
+      texturePreferences: []
+      spiceTolerance: "mild" # options: none, mild, medium, hot
+
+  allergiesAndIntolerances:
+    allergies: [none]
+    intolerances: [lactose:Suzie]
+    crossContaminationConcerns: [none]
+
+  dietaryApproach:
+    pattern: "omnivore" # options: omnivore, vegetarian, pescatarian, vegan, mixed
+    restrictions: [none]
+    goals: [higher protein] # examples: higher protein, lower sodium, more fiber
+
+  avoidIngredients: []
+  favoriteCuisines: []
+  preferredProteins: [chicken, beef]
+  kidFriendlyDefaults:
+    lowerSpiceVersion: true
+    sauceOnSide: true
+    simplePlating: true
+
+cookingMethodsAndAppliances:
+  availableAppliances:
+    oven: true
+    stove: true
+    microwave: true
+    airFryer: true
+    slowCooker: true
+    instantPot: true
+    grill: true
+    toasterOven: false
+    riceCooker: true
+    sousVide: false
+    flatTopGrill: true
+    waffleIron (small): true
+    waffleIron (full): false
+
+  availableTools:
+    blender: false
+    foodProcessor: false
+    standMixer: false
+    immersionBlender: false
+    sheetPan: true
+    castIron: true
+    dutchOven: false
+    probe_thermometer: true
+
+  preferredMethods: [] # examples: one-pan, sheet-pan, slow-cook, grill
+  avoidMethods: [] # examples: deep-fry, open-flame, long-braise
+  weeknightTimeLimitMinutes: 35
+  weekendTimeLimitMinutes: 90
+  maxActivePrepMinutes: 20
+
+  batchCooking:
+    enabled: true
+    preferredDays: [Sunday] # examples: Sunday, Wednesday
+    leftoverReuseDays: 2
+
+  cleanupPreferences:
+    minimizeDishes: true
+    onePotPriority: true
