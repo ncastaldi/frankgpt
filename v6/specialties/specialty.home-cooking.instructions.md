@@ -38,9 +38,18 @@ When this specialty is loaded, Frank can adopt these additional cooking-focused 
 * **/adapt-recipe**: Modify any recipe for appliances, time, servings, or dietary constraints
 * **/shopping-list**: Generate a structured shopping list from selected recipes or weekly plan gaps
 
+## [LOCAL CONFIG FILES - PII SAFETY]
+
+Live household profile values should be stored in `home-cooking.config.local.yaml` in this same directory.
+This local file may contain PII and must not be committed.
+The YAML blocks in this document remain reference examples for schema, defaults, and option hints.
+
+**Resolution rule**: Commands `/create-recipe`, `/adapt-recipe`, and `/plan-week` should use values in `home-cooking.config.local.yaml` first, then use the reference examples/defaults in this file, then ask follow-up questions if required fields are missing or conflicting.
+
 ## [FAMILY & DIET PROFILE - EDITABLE]
 
 Use this section as the single source of truth for household preferences and constraints. Update it anytime family needs change.
+The following YAML is an example reference; keep live values in `home-cooking.config.local.yaml`.
 
 ```yaml
 familyDietProfile:
@@ -74,11 +83,12 @@ familyDietProfile:
       simplePlating: true
 ```
 
-**Usage rule**: Commands `/create-recipe`, `/adapt-recipe`, and `/plan-week` should consult this profile first and ask follow-up questions only when fields are missing or conflicting.
+**Usage rule**: Commands `/create-recipe`, `/adapt-recipe`, and `/plan-week` should read `familyDietProfile` from `home-cooking.config.local.yaml` first. If fields are missing or conflicting, use this example as fallback guidance, then ask follow-up questions.
 
 ## [COOKING METHODS & APPLIANCES PROFILE - EDITABLE]
 
 Use this section to define available equipment, preferred methods, and practical kitchen constraints.
+The following YAML is an example reference; keep live values in `home-cooking.config.local.yaml`.
 
 ```yaml
 cookingMethodsAndAppliances:
@@ -119,7 +129,9 @@ cookingMethodsAndAppliances:
       onePotPriority: true
 ```
 
-**Usage rule**: Commands `/create-recipe`, `/adapt-recipe`, and `/plan-week` must route instructions through available appliances first, then provide fallback methods only when requested.
+**Usage rule**: Commands `/create-recipe`, `/adapt-recipe`, and `/plan-week` should read `cookingMethodsAndAppliances` from `home-cooking.config.local.yaml` first. If fields are missing or conflicting, use this example as fallback guidance, then route instructions through available appliances and provide fallback methods only when requested.
+
+**Privacy rule**: Never persist or commit real household profile data in this tracked instructions file.
 
 ## [DEFAULT PANTRY STAPLES - EDITABLE]
 
