@@ -1,4 +1,4 @@
-Act as an expert frontend engineer. I have just imported this landing page project from Replit, and it contains environment-specific bloat, configuration files, and potential boilerplate that I don't need. 
+Act as an expert frontend engineer. I have just imported a project from Replit, and it contains environment-specific bloat, configuration files, and potential boilerplate that I don't need. 
 
 Your task is to strip everything out except the absolute core landing page so I have a clean, production-ready, standalone codebase.
 
